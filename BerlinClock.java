@@ -27,13 +27,37 @@ public class BerlinClock{
   }
 
   public String getTopHours(int hours){
-    // if(hours < 5){
-    //   return this.fiveHourLamps;
-    // }
+    String lampResult = "";
+    if(hours < 5){
+      lampResult = getTopHoursString(this.fiveHourLamps);
+    } else if (hours >= 5 && hours < 10){
+      this.fiveHourLamps[0] = "R";
+      lampResult = getTopHoursString(this.fiveHourLamps);
+    } else if (hours >= 10 && hours < 15){
+      this.fiveHourLamps[0] = "R";
+      this.fiveHourLamps[1] = "R";
+      lampResult = getTopHoursString(this.fiveHourLamps);
+    } else if (hours >= 15 && hours < 20){
+      this.fiveHourLamps[0] = "R";
+      this.fiveHourLamps[1] = "R";
+      this.fiveHourLamps[2] = "R";
+      lampResult = getTopHoursString(this.fiveHourLamps);
+    } else if (hours >= 20 && hours <= 24){
+      this.fiveHourLamps[0] = "R";
+      this.fiveHourLamps[1] = "R";
+      this.fiveHourLamps[2] = "R";
+      this.fiveHourLamps[3] = "R";
+      lampResult = getTopHoursString(this.fiveHourLamps);
+    }
+    return lampResult;
+  }
+
+  public String getTopHoursString(String[] lampsArray){
     String result = "";
     for(String lamp: this.fiveHourLamps){
       result = result + lamp;
     }
     return result;
   }
+
 }
