@@ -36,13 +36,13 @@ public class BerlinClockTest {
     }
 //
 //     // Bottom hours should light a red lamp for every hour left from top hours
-//     @Test
-//     public void testBottomHoursShouldLightRedLampForEveryHourLeftFromTopHours() {
-//         Assert.assertEquals("OOOO", berlinClock.getBottomHours(0));
-//         Assert.assertEquals("RRRO", berlinClock.getBottomHours(13));
-//         Assert.assertEquals("RRRO", berlinClock.getBottomHours(23));
-//         Assert.assertEquals("RRRR", berlinClock.getBottomHours(24));
-//     }
+    @Test
+    public void testBottomHoursShouldLightRedLampForEveryHourLeftFromTopHours() {
+        Assert.assertEquals("OOOO", berlinClock.getBottomHours(0));
+        // Assert.assertEquals("RRRO", berlinClock.getBottomHours(13));
+        // Assert.assertEquals("RRRO", berlinClock.getBottomHours(23));
+        // Assert.assertEquals("RRRR", berlinClock.getBottomHours(24));
+    }
 //
 //     // Top minutes should have 11 lamps
 //     @Test
