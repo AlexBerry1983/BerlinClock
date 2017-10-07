@@ -29,37 +29,42 @@ public class BerlinClock{
   public String getTopHours(int hours){
     String lampResult = "";
     if(hours < 5){
-      lampResult = getTopHoursString(this.fiveHourLamps);
+      lampResult = getStringResult(this.fiveHourLamps);
     } else if (hours >= 5 && hours < 10){
       this.fiveHourLamps[0] = "R";
-      lampResult = getTopHoursString(this.fiveHourLamps);
+      lampResult = getStringResult(this.fiveHourLamps);
     } else if (hours >= 10 && hours < 15){
       this.fiveHourLamps[0] = "R";
       this.fiveHourLamps[1] = "R";
-      lampResult = getTopHoursString(this.fiveHourLamps);
+      lampResult = getStringResult(this.fiveHourLamps);
     } else if (hours >= 15 && hours < 20){
       this.fiveHourLamps[0] = "R";
       this.fiveHourLamps[1] = "R";
       this.fiveHourLamps[2] = "R";
-      lampResult = getTopHoursString(this.fiveHourLamps);
+      lampResult = getStringResult(this.fiveHourLamps);
     } else if (hours >= 20 && hours <= 24){
       this.fiveHourLamps[0] = "R";
       this.fiveHourLamps[1] = "R";
       this.fiveHourLamps[2] = "R";
       this.fiveHourLamps[3] = "R";
-      lampResult = getTopHoursString(this.fiveHourLamps);
+      lampResult = getStringResult(this.fiveHourLamps);
     } else {
       return "Error! You must enter a number between 0-24";
     }
     return lampResult;
   }
 
-  public String getTopHoursString(String[] lampsArray){
+  public String getStringResult(String[] lampsArray){
     String result = "";
-    for(String lamp: lmapsArray){
+    for(String lamp: lampsArray){
       result = result + lamp;
     }
     return result;
+  }
+
+  public String getBottomHours(int hours){
+    String lampResult = "";
+    return getStringResult(this.oneHourLamps);
   }
 
 }

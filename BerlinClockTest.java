@@ -30,10 +30,10 @@ public class BerlinClockTest {
     }
 //
 //     // Bottom hours should have 4 lamps
-//     @Test
-//     public void testBottomHoursShouldHave4Lamps() {
-//         Assert.assertEquals(4, berlinClock.getBottomHours(5).length());
-//     }
+    @Test
+    public void testBottomHoursShouldHave4Lamps() {
+        Assert.assertEquals(4, berlinClock.getBottomHours(5).length());
+    }
 //
 //     // Bottom hours should light a red lamp for every hour left from top hours
 //     @Test
