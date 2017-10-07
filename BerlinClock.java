@@ -48,13 +48,15 @@ public class BerlinClock{
       this.fiveHourLamps[2] = "R";
       this.fiveHourLamps[3] = "R";
       lampResult = getTopHoursString(this.fiveHourLamps);
+    } else {
+      return "Error! You must enter a number between 0-24";
     }
     return lampResult;
   }
 
   public String getTopHoursString(String[] lampsArray){
     String result = "";
-    for(String lamp: this.fiveHourLamps){
+    for(String lamp: lmapsArray){
       result = result + lamp;
     }
     return result;
