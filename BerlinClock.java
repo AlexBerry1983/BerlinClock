@@ -33,15 +33,15 @@ public class BerlinClock {
     } else if (hours >= 20 && hours < 25){
       topHoursString = "RRRR";
     }
-    updateArrayList(topHoursString);
+    updateArrayList(topHoursString, this.topHours);
     return topHoursString;
   }
 
-  public void updateArrayList(String stringToAdd){
+  public void updateArrayList(String stringToAdd, ArrayList listToUpdate){
     this.topHours.clear();
     char[] lettersToAdd = stringToAdd.toCharArray();
     for(char letter: lettersToAdd){
-      this.topHours.add(Character.toString(letter));
+      listToUpdate.add(Character.toString(letter));
     }
   }
 
@@ -58,36 +58,38 @@ public class BerlinClock {
       case 4: bottomHoursString = "RRRR";
               break;
     }
+    updateArrayList(bottomHoursString, this.bottomHours);
     return bottomHoursString;
   }
 
   public String getTopMinutes(int minutes){
-    String topMinutes = "OOOOOOOOOOO";
+    String topMinutesString = "OOOOOOOOOOO";
     switch(minutes / 5){
-      case 1: topMinutes = "YOOOOOOOOOO";
+      case 1: topMinutesString = "YOOOOOOOOOO";
               break;
-      case 2: topMinutes = "YYOOOOOOOOO";
+      case 2: topMinutesString = "YYOOOOOOOOO";
               break;
-      case 3: topMinutes = "YYROOOOOOOO";
+      case 3: topMinutesString = "YYROOOOOOOO";
               break;
-      case 4: topMinutes = "YYRYOOOOOOO";
+      case 4: topMinutesString = "YYRYOOOOOOO";
               break;
-      case 5: topMinutes = "YYRYYOOOOOO";
+      case 5: topMinutesString = "YYRYYOOOOOO";
               break;
-      case 6: topMinutes = "YYRYYROOOOO";
+      case 6: topMinutesString = "YYRYYROOOOO";
               break;
-      case 7: topMinutes = "YYRYYRYOOOO";
+      case 7: topMinutesString = "YYRYYRYOOOO";
               break;
-      case 8: topMinutes = "YYRYYRYYOOO";
+      case 8: topMinutesString = "YYRYYRYYOOO";
               break;
-      case 9: topMinutes = "YYRYYRYYROO";
+      case 9: topMinutesString = "YYRYYRYYROO";
               break;
-      case 10: topMinutes = "YYRYYRYYRYO";
+      case 10: topMinutesString = "YYRYYRYYRYO";
                break;
-      case 11: topMinutes = "YYRYYRYYRYY";
+      case 11: topMinutesString = "YYRYYRYYRYY";
                break;
     }
-    return topMinutes;
+    updateArrayList(topMinutesString, this.topMinutes)
+    return topMinutesString;
   }
 
 }
