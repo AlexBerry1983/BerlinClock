@@ -88,8 +88,13 @@ public class BerlinClock {
       case 11: topMinutesString = "YYRYYRYYRYY";
                break;
     }
-    updateArrayList(topMinutesString, this.topMinutes)
+    updateArrayList(topMinutesString, this.topMinutes);
     return topMinutesString;
+  }
+
+  public String getBottomMinutes(int minutes){
+    String bottomMinutesString = "OOOO";
+    return bottomMinutesString;
   }
 
 }

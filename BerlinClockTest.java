@@ -62,18 +62,18 @@ public class BerlinClockTest {
     }
 //
 //     // Top minutes should light a yellow lamp for every 5 minutes unless it's first quarter, half or last quarter
-//     @Test
-//     public void testTopMinutesShouldLightYellowLampForEvery5MinutesUnlessItIsFirstQuarterHalfOrLastQuarter() {
-//         Assert.assertEquals("OOOOOOOOOOO", berlinClock.getTopMinutes(0));
-//         Assert.assertEquals("YYROOOOOOOO", berlinClock.getTopMinutes(17));
-//         Assert.assertEquals("YYRYYRYYRYY", berlinClock.getTopMinutes(59));
-//     }
+    @Test
+    public void testTopMinutesShouldLightYellowLampForEvery5MinutesUnlessItIsFirstQuarterHalfOrLastQuarter() {
+        Assert.assertEquals("OOOOOOOOOOO", berlinClock.getTopMinutes(0));
+        Assert.assertEquals("YYROOOOOOOO", berlinClock.getTopMinutes(17));
+        Assert.assertEquals("YYRYYRYYRYY", berlinClock.getTopMinutes(59));
+    }
 //
 //     // Bottom minutes should have 4 lamps
-//     @Test
-//     public void testBottomMinutesShouldHave4Lamps() {
-//         Assert.assertEquals(4, berlinClock.getBottomMinutes(0).length());
-//     }
+    @Test
+    public void testBottomMinutesShouldHave4Lamps() {
+        Assert.assertEquals(4, berlinClock.getBottomMinutes(0).length());
+    }
 //
 //     // Bottom minutes should light a yellow lamp for every minute left from top minutes
 //     @Test
