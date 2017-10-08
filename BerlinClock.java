@@ -43,10 +43,9 @@ public class BerlinClock{
       this.fiveHourLamps[2] = "R";
       lampResult = getStringResult(this.fiveHourLamps);
     } else if (hours >= 20 && hours <= 24){
-      this.fiveHourLamps[0] = "R";
-      this.fiveHourLamps[1] = "R";
-      this.fiveHourLamps[2] = "R";
-      this.fiveHourLamps[3] = "R";
+      for(int i = 0; i < this.fiveHourLamps.length; i ++){
+        this.fiveHourLamps[i] = "R";
+      }
       lampResult = getStringResult(this.fiveHourLamps);
     } else {
       return "Error! You must enter a number between 0-24";
@@ -63,8 +62,26 @@ public class BerlinClock{
   }
 
   public String getBottomHours(int hours){
-    String lampResult = "";
-    return getStringResult(this.oneHourLamps);
+    double remainingHours = Math.round(hours % 5);
+    int intvalue = (int) remainingHours;
+    // System.out.println(intvalue);
+    switch(intvalue){
+      case 1: this.oneHourLamps[0] = "R";
+              break;
+      case 2: this.oneHourLamps[0] = "R";
+              this.oneHourLamps[1] = "R";
+              break;
+      case 3: this.oneHourLamps[0] = "R";
+              this.oneHourLamps[1] = "R";
+              this.oneHourLamps[2] = "R";
+              break;
+      case 4: for(int i = 0; i < this.oneHourLamps.length; i++){
+                this.oneHourLamps[i] = "R";
+              }
+              break;
+      }
+      String lampResult = getStringResult(this.oneHourLamps);
+      return lampResult;
   }
 
 }
