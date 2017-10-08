@@ -2,8 +2,16 @@ import java.util.*;
 
 public class BerlinClock {
 
+  private ArrayList<String> topHours = new ArrayList<String>();
+  private ArrayList<String> bottomHours = new ArrayList<String>();
+  private ArrayList<String> topMinutes = new ArrayList<String>();
+  private ArrayList<String> bottomMinutes = new ArrayList<String>();
+
   public BerlinClock(){
-    
+    this.topHours = topHours;
+    this.bottomHours = bottomHours;
+    this.topMinutes = topMinutes;
+    this.bottomMinutes = bottomMinutes;
   }
 
   public String getSeconds(int seconds){
@@ -25,7 +33,16 @@ public class BerlinClock {
     } else if (hours >= 20 && hours < 25){
       topHoursString = "RRRR";
     }
+    updateArrayList(topHoursString);
     return topHoursString;
+  }
+
+  public void updateArrayList(String stringToAdd){
+    this.topHours.clear();
+    char[] lettersToAdd = stringToAdd.toCharArray();
+    for(char letter: lettersToAdd){
+      this.topHours.add(Character.toString(letter));
+    }
   }
 
   public String getBottomHours(int hours){
