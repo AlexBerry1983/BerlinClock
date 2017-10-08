@@ -53,13 +53,13 @@ public class BerlinClockTest {
     }
 //
 //     // Top minutes should have 3rd, 6th and 9th lamps in red to indicate first quarter, half and last quarter
-//     @Test
-//     public void testTopMinutesShouldHave3rd6thAnd9thLampsInRedToIndicateFirstQuarterHalfAndLastQuarter() {
-//         String minutes32 = berlinClock.getTopMinutes(32);
-//         Assert.assertEquals("R", minutes32.substring(2, 3));
-//         Assert.assertEquals("R", minutes32.substring(5, 6));
-//         Assert.assertEquals("O", minutes32.substring(8, 9));
-//     }
+    @Test
+    public void testTopMinutesShouldHave3rd6thAnd9thLampsInRedToIndicateFirstQuarterHalfAndLastQuarter() {
+        String minutes32 = berlinClock.getTopMinutes(32);
+        Assert.assertEquals("R", minutes32.substring(2, 3));
+        Assert.assertEquals("R", minutes32.substring(5, 6));
+        Assert.assertEquals("O", minutes32.substring(8, 9));
+    }
 //
 //     // Top minutes should light a yellow lamp for every 5 minutes unless it's first quarter, half or last quarter
 //     @Test

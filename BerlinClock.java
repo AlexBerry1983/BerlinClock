@@ -2,9 +2,8 @@ import java.util.*;
 
 public class BerlinClock {
 
-
   public BerlinClock(){
-
+    
   }
 
   public String getSeconds(int seconds){
@@ -43,6 +42,35 @@ public class BerlinClock {
               break;
     }
     return bottomHoursString;
+  }
+
+  public String getTopMinutes(int minutes){
+    String topMinutes = "OOOOOOOOOOO";
+    switch(minutes / 5){
+      case 1: topMinutes = "YOOOOOOOOOO";
+              break;
+      case 2: topMinutes = "YYOOOOOOOOO";
+              break;
+      case 3: topMinutes = "YYROOOOOOOO";
+              break;
+      case 4: topMinutes = "YYRYOOOOOOO";
+              break;
+      case 5: topMinutes = "YYRYYOOOOOO";
+              break;
+      case 6: topMinutes = "YYRYYROOOOO";
+              break;
+      case 7: topMinutes = "YYRYYRYOOOO";
+              break;
+      case 8: topMinutes = "YYRYYRYYOOO";
+              break;
+      case 9: topMinutes = "YYRYYRYYROO";
+              break;
+      case 10: topMinutes = "YYRYYRYYRYO";
+               break;
+      case 11: topMinutes = "YYRYYRYYRYY";
+               break;
+    }
+    return topMinutes;
   }
 
 }
