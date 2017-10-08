@@ -1,87 +1,48 @@
 import java.util.*;
 
-public class BerlinClock{
+public class BerlinClock {
 
-  private String twoSecondLamp = "";
-  private String[] fiveHourLamps = {"O", "O", "O", "O"};
-  private String[] oneHourLamps = {"O", "O", "O", "O"};
-  private String[] fiveMinuteLamps = {"O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"};
-  private String[] oneMinuteLamps = {"O", "O", "O", "O"};
 
   public BerlinClock(){
-    this.twoSecondLamp = "";
-    this.fiveHourLamps = fiveHourLamps;
-    this.oneHourLamps = oneHourLamps;
-    this.fiveMinuteLamps = fiveMinuteLamps;
-    this.oneMinuteLamps = oneMinuteLamps;
+
   }
 
   public String getSeconds(int seconds){
     if(seconds % 2 == 0){
-      this.twoSecondLamp = "Y";
-      return this.twoSecondLamp;
+      return "Y";
     } else {
-      this.twoSecondLamp = "O";
+      return "O";
     }
-    return this.twoSecondLamp;
   }
 
   public String getTopHours(int hours){
-    String lampResult = "";
-    if(hours < 5){
-      lampResult = getStringResult(this.fiveHourLamps);
-    } else if (hours >= 5 && hours < 10){
-      this.fiveHourLamps[0] = "R";
-      lampResult = getStringResult(this.fiveHourLamps);
+    String topHoursString = "OOOO";
+      if (hours >= 5 && hours < 10){
+      topHoursString = "ROOO";
     } else if (hours >= 10 && hours < 15){
-      this.fiveHourLamps[0] = "R";
-      this.fiveHourLamps[1] = "R";
-      lampResult = getStringResult(this.fiveHourLamps);
+      topHoursString = "RROO";
     } else if (hours >= 15 && hours < 20){
-      this.fiveHourLamps[0] = "R";
-      this.fiveHourLamps[1] = "R";
-      this.fiveHourLamps[2] = "R";
-      lampResult = getStringResult(this.fiveHourLamps);
-    } else if (hours >= 20 && hours <= 24){
-      for(int i = 0; i < this.fiveHourLamps.length; i ++){
-        this.fiveHourLamps[i] = "R";
-      }
-      lampResult = getStringResult(this.fiveHourLamps);
-    } else {
-      return "Error! You must enter a number between 0-24";
+      topHoursString = "RRRO";
+    } else if (hours >= 20 && hours < 25){
+      topHoursString = "RRRR";
     }
-    return lampResult;
-  }
-
-  public String getStringResult(String[] lampsArray){
-    String result = "";
-    for(String lamp: lampsArray){
-      result = result + lamp;
-    }
-    return result;
+    return topHoursString;
   }
 
   public String getBottomHours(int hours){
-    double remainingHours = Math.round(hours % 5);
-    int intvalue = (int) remainingHours;
-    // System.out.println(intvalue);
-    switch(intvalue){
-      case 1: this.oneHourLamps[0] = "R";
+    String bottomHoursString = "OOOO";
+    int remainingHours = Math.round(hours % 5);
+    switch(remainingHours){
+      case 1: bottomHoursString = "ROOO";
               break;
-      case 2: this.oneHourLamps[0] = "R";
-              this.oneHourLamps[1] = "R";
+      case 2: bottomHoursString = "RROO";
               break;
-      case 3: this.oneHourLamps[0] = "R";
-              this.oneHourLamps[1] = "R";
-              this.oneHourLamps[2] = "R";
+      case 3: bottomHoursString = "RRRO";
               break;
-      case 4: for(int i = 0; i < this.oneHourLamps.length; i++){
-                this.oneHourLamps[i] = "R";
-              }
+      case 4: bottomHoursString = "RRRR";
               break;
-      }
-      String lampResult = getStringResult(this.oneHourLamps);
-      return lampResult;
+    }
+    return bottomHoursString;
   }
 
 }

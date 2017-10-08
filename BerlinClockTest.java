@@ -22,11 +22,11 @@ public class BerlinClockTest {
 //     // Top hours should light a red lamp for every 5 hours
     @Test
     public void testTopHoursShouldLightRedLampForEvery5Hours() {
-        Assert.assertEquals("OOOO", berlinClock.getTopHours(0));
         Assert.assertEquals("ROOO", berlinClock.getTopHours(7));
+        Assert.assertEquals("RRRR", berlinClock.getTopHours(24));
+        Assert.assertEquals("OOOO", berlinClock.getTopHours(0));
         Assert.assertEquals("RROO", berlinClock.getTopHours(12));
         Assert.assertEquals("RRRO", berlinClock.getTopHours(18));
-        Assert.assertEquals("RRRR", berlinClock.getTopHours(24));
     }
 //
 //     // Bottom hours should have 4 lamps
@@ -38,18 +38,19 @@ public class BerlinClockTest {
 //     // Bottom hours should light a red lamp for every hour left from top hours
      @Test
     public void testBottomHoursShouldLightRedLampForEveryHourLeftFromTopHours() {
-        Assert.assertEquals("OOOO", berlinClock.getBottomHours(0));
         Assert.assertEquals("ROOO", berlinClock.getBottomHours(11));
         Assert.assertEquals("RROO", berlinClock.getBottomHours(2));
         Assert.assertEquals("RRRO", berlinClock.getBottomHours(23));
         Assert.assertEquals("RRRR", berlinClock.getBottomHours(24));
+        Assert.assertEquals("OOOO", berlinClock.getBottomHours(0));
+        Assert.assertEquals("ROOO", berlinClock.getBottomHours(16));
    }
 //
-//     // Top minutes should have 11 lamps
-//     @Test
-//     public void testTopMinutesShouldHave11Lamps() {
-//         Assert.assertEquals(11, berlinClock.getTopMinutes(34).length());
-//     }
+    // Top minutes should have 11 lamps
+    @Test
+    public void testTopMinutesShouldHave11Lamps() {
+        Assert.assertEquals(11, berlinClock.getTopMinutes(34).length());
+    }
 //
 //     // Top minutes should have 3rd, 6th and 9th lamps in red to indicate first quarter, half and last quarter
 //     @Test
