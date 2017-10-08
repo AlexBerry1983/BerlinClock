@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class BerlinClock {
-
+  
   private ArrayList<String> topHours = new ArrayList<String>();
   private ArrayList<String> bottomHours = new ArrayList<String>();
   private ArrayList<String> topMinutes = new ArrayList<String>();
@@ -106,6 +106,10 @@ public class BerlinClock {
     }
     updateArrayList(bottomMinutesString, this.bottomMinutes);
     return bottomMinutesString;
+  }
+
+  public ArrayList convertToBerlinTime(String timeToConvert){
+
   }
 
 }

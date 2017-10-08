@@ -85,10 +85,10 @@ public class BerlinClockTest {
     }
 //
 //     // Berlin Clock should result in array with 5 elements
-    // @Test
-    // public void testBerlinClockShouldResultInArrayWith5Elements()  {
-    //     Assert.assertEquals(5, berlinClock.convertToBerlinTime("13:17:01").length);
-    // }
+    @Test
+    public void testBerlinClockShouldResultInArrayWith5Elements()  {
+        Assert.assertEquals(5, berlinClock.convertToBerlinTime("13:17:01").length);
+    }
 //
 //     // Berlin Clock it should "result in correct seconds, hours and minutes" in {
 //     @Test
