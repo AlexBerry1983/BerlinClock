@@ -38,7 +38,7 @@ public class BerlinClock {
   }
 
   public void updateArrayList(String stringToAdd, ArrayList listToUpdate){
-    this.topHours.clear();
+    listToUpdate.clear();
     char[] lettersToAdd = stringToAdd.toCharArray();
     for(char letter: lettersToAdd){
       listToUpdate.add(Character.toString(letter));
@@ -94,6 +94,17 @@ public class BerlinClock {
 
   public String getBottomMinutes(int minutes){
     String bottomMinutesString = "OOOO";
+    int bottomMinutesToLight = Math.round(minutes % 5);
+    switch(bottomMinutesToLight){
+      case 1: bottomMinutesString = "YOOO";
+              break;
+      case 2: bottomMinutesString = "YYOO";
+              break;
+      case 3: bottomMinutesString = "YYYO";
+              break;
+      case 4: bottomMinutesString = "YYYY";
+    }
+    updateArrayList(bottomMinutesString, this.bottomMinutes);
     return bottomMinutesString;
   }
 

@@ -76,18 +76,19 @@ public class BerlinClockTest {
     }
 //
 //     // Bottom minutes should light a yellow lamp for every minute left from top minutes
-//     @Test
-//     public void testBottomMinutesShouldLightYellowLampForEveryMinuteLeftFromTopMinutes() {
-//         Assert.assertEquals("OOOO", berlinClock.getBottomMinutes(0));
-//         Assert.assertEquals("YYOO", berlinClock.getBottomMinutes(17));
-//         Assert.assertEquals("YYYY", berlinClock.getBottomMinutes(59));
-//     }
+    @Test
+    public void testBottomMinutesShouldLightYellowLampForEveryMinuteLeftFromTopMinutes() {
+        Assert.assertEquals("YYOO", berlinClock.getBottomMinutes(17));
+        Assert.assertEquals("YYYY", berlinClock.getBottomMinutes(59));
+        Assert.assertEquals("OOOO", berlinClock.getBottomMinutes(0));
+        Assert.assertEquals("YYYO", berlinClock.getBottomMinutes(3));
+    }
 //
 //     // Berlin Clock should result in array with 5 elements
-//     @Test
-//     public void testBerlinClockShouldResultInArrayWith5Elements()  {
-//         Assert.assertEquals(5, berlinClock.convertToBerlinTime("13:17:01").length);
-//     }
+    // @Test
+    // public void testBerlinClockShouldResultInArrayWith5Elements()  {
+    //     Assert.assertEquals(5, berlinClock.convertToBerlinTime("13:17:01").length);
+    // }
 //
 //     // Berlin Clock it should "result in correct seconds, hours and minutes" in {
 //     @Test
