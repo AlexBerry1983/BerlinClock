@@ -91,14 +91,14 @@ public class BerlinClockTest {
     }
 //
 //     // Berlin Clock it should "result in correct seconds, hours and minutes" in {
-//     @Test
-//     public void testBerlinClockShouldResultInCorrectSecondsHoursAndMinutes() {
-//         String[] berlinTime = berlinClock.convertToBerlinTime("16:37:16");
-//         String[] expected = new String[] {"Y", "RRRO", "ROOO", "YYRYYRYOOOO", "YYOO"};
-//         Assert.assertEquals(expected.length, berlinTime.length);
-//         for (int index = 0; index < expected.length; index++) {
-//             Assert.assertEquals(expected[index], berlinTime[index]);
-//         }
-//     }
+    @Test
+    public void testBerlinClockShouldResultInCorrectSecondsHoursAndMinutes() {
+        String[] berlinTime = berlinClock.convertToBerlinTime("16:37:16");
+        String[] expected = new String[] {"Y", "RRRO", "ROOO", "YYRYYRYOOOO", "YYOO"};
+        Assert.assertEquals(expected.length, berlinTime.length);
+        for (int index = 0; index < expected.length; index++) {
+            Assert.assertEquals(expected[index], berlinTime[index]);
+        }
+    }
 //
 }

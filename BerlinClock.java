@@ -1,13 +1,18 @@
 import java.util.*;
+import java.math.*;
 
 public class BerlinClock {
-  
+
+  private String[] clockContainer = {"", "", "", "", ""};
+  private ArrayList<String> seconds = new ArrayList<String>();
   private ArrayList<String> topHours = new ArrayList<String>();
   private ArrayList<String> bottomHours = new ArrayList<String>();
   private ArrayList<String> topMinutes = new ArrayList<String>();
   private ArrayList<String> bottomMinutes = new ArrayList<String>();
 
   public BerlinClock(){
+    this.clockContainer = clockContainer;
+    this.seconds = seconds;
     this.topHours = topHours;
     this.bottomHours = bottomHours;
     this.topMinutes = topMinutes;
@@ -15,11 +20,12 @@ public class BerlinClock {
   }
 
   public String getSeconds(int seconds){
+    String secondsString = "O";
     if(seconds % 2 == 0){
-      return "Y";
-    } else {
-      return "O";
+      secondsString = "Y";
     }
+    updateArrayList(secondsString, this.seconds);
+    return secondsString;
   }
 
   public String getTopHours(int hours){
@@ -108,8 +114,25 @@ public class BerlinClock {
     return bottomMinutesString;
   }
 
-  public ArrayList convertToBerlinTime(String timeToConvert){
+  public String[] convertToBerlinTime(String timeToConvert){
+    String[] timeArray = timeToConvert.split(":");
+    String secondsString = timeArray[2];
+    String hoursString = timeArray[0];
+    String minutesString = timeArray[1];
 
-  }
+    int secondsInt = Integer.valueOf(secondsString);
+    int topHoursInt = Integer.valueOf(hoursString);
+    int bottomHoursInt = Integer.valueOf(hoursString);
+    int topMinutessInt = Integer.valueOf(minutesString);
+    int bottomMinutesInt = Integer.valueOf(minutesString);
+
+    this.clockContainer[0] = getSeconds(secondsInt);
+    this.clockContainer[1] = getTopHours(topHoursInt);
+    this.clockContainer[2] = getBottomHours(bottomHoursInt);
+    this.clockContainer[3] = getTopMinutes(topMinutessInt);
+    this.clockContainer[4] = getBottomMinutes(bottomMinutesInt);
+
+    return this.clockContainer;
+   }
 
 }
